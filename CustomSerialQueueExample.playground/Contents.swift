@@ -19,27 +19,27 @@ serilQueue.async {
     printMyName(name: "Ainul")
 }
 
-// Assign Task 1 to serial Queue
+// Assign Task 2 to serial Queue
 serilQueue.sync {
     printMyAge(age: "27")
 }
 
-// Assign Task 1 to serial Queue
+// Assign Task 3 to serial Queue
 serilQueue.async {
     printMyName(name: "Sharif")
 }
 
-// Assign Task 1 to serial Queue
+// Assign Task 4 to serial Queue
 serilQueue.sync {
     printMyAge(age: "25")
 }
 
-// Assign Task 1 to serial Queue
+// Assign Task 5 to serial Queue
 serilQueue.async {
     printMyName(name: "Shahriar")
 }
 
-// Assign Task 1 to serial Queue
+// Assign Task 6 to serial Queue
 serilQueue.sync {
     printMyAge(age: "32")
 }
