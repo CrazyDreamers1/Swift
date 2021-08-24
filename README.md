@@ -3,8 +3,5 @@
 # Custom Queue - serial and Concurrent
 
 ⨠ Example code of Serial Queue implementaion
-   -Serial asyncronos
-   
-⨠ Example code of Concurrent Queue implementaion
-   -Concurrent asyncronos
-   -Concurrent syncronos 
+⨠ Example code of Concurrent Queue implementaion asyncronosly 
+⨠ Concurrent Queue show difference sync and async 
