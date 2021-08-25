@@ -15,6 +15,8 @@ func printMyAge (age:String) {
 let concurrentQueue = DispatchQueue(label: "SomeConcurrentTask", attributes: .concurrent)
 
 // Assign Task 1 Syncronusly to Queue
+//Here only this task is syncronus while all others are async you will see difference on console if you compare result with last Example
+
 concurrentQueue.sync {
     sleep(1)
     printMyName(name: "Sharif")
