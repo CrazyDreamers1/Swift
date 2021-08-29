@@ -1,46 +1,44 @@
 import UIKit
 
-//API Call 1
-func someAPICallOne(completion: @escaping(String)->Void){
+//Normal Dependancy task hanle with Dispatch Serial Queue
+//If any task dependent on other we need to execute it first. We can do it Serial Queue let see how...
+//Here we are creating three task of taking snacks, where task one is about let us know what we are doning. and Other two step is for taking snacks. if task two isn't execute before task three then there will be problem. because if you not go yet for taking fruits from store how it will be in refrigerator!
+//So task three is dependant on task two
+//Dependant task must need to add first then it will execute first
+
+
+func taskOne(){
+    print("This is about taking snacks!")
+}
+
+func taskTwo(){
     sleep(4)
-    completion("API call one is done! ")
-    
+    print("Please go to store and Find some fruits and put it on refrigerator")
 }
 
-//API Call 2
-func someAPICallTwo(completion: @escaping(String)->Void){
-    sleep(3)
-    completion("API call Two is done! ")
+func taskThree(){
+    sleep(2)
+    print("Take fruits from refrigerator and have snacks")
 }
 
-//API Call 3
-func someAPICallThree(completion: @escaping(String)->Void){
-    sleep(1)
-    completion("API call Three is done! ")
-}
 
-//Dependant task must need to add first then it will execute first 
-
+//Create Serial Queue
 let dispatchQueue = DispatchQueue(label: "someSerialQueue")
-//first API Calling method is added
+//Task one is added to serial queue
 dispatchQueue.sync {
-    someAPICallOne { response in
-        print(response)
-    }
+    taskOne()
 }
 
-//Second API Calling method is added
+//Task Two is added to serial queue
 dispatchQueue.sync {
-    someAPICallTwo { response in
-        print(response)
-    }
+    taskTwo()
 }
 
-//Third API calling method is added
+//Task Three is added to serial queue
 dispatchQueue.sync {
-    someAPICallThree { response in
-        print(response)
-    }
+    taskThree()
 }
+
+//Note: This approch may not work on API Calling because URLSeassion execute on separate backgroud thread.
 
 
